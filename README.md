@@ -38,7 +38,7 @@ We provide a REST service for easy management with data from the database.
 | GET | `/actions/video/` | List all video actions | &mdash; |
 | GET | `/actions/video/{id}` | Get one video action by {id} | id |
 | POST | `/actions/video/add` | Add new video action | &mdash; |
-| POST | `/actions/video/delete/{id}` | Delete the video action by {id} | id |
+| DELETE | `/actions/video/{id}` | Delete the video action by {id} | id |
 
 #### Video action types
 | Type | Path | Description | Parameters |
