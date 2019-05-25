@@ -43,7 +43,7 @@ public class ActionController {
      * @return optional video action object
      */
     @GetMapping("/api/actions/video/{id}")
-    public Optional<VideoAction> getOneVideoAction(@PathVariable("id") String id ) {
+    public Optional<VideoAction> getOneVideoActionById(@PathVariable("id") String id ) {
         return videoActionRepository.findById(Long.parseLong(id));
     }
 
@@ -55,6 +55,17 @@ public class ActionController {
     @GetMapping("/api/actions/video/types")
     public List<VideoActionType> getAllVideoActionTypes() {
         return videoActionTypeRepository.findAll();
+    }
+
+    /**
+     * Get One video action type by id
+     *
+     * @param id id of the video action type
+     * @return video action type object
+     */
+    @GetMapping("/api/actions/video/types/{id}")
+    public Optional<VideoActionType> getOneVideoActionTypeById(@PathVariable String id) {
+        return videoActionTypeRepository.findById(Long.parseLong(id));
     }
 
     /**
