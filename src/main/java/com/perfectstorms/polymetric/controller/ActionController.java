@@ -31,7 +31,7 @@ public class ActionController {
      *
      * @return list of VideoAction objects
      */
-    @GetMapping("/api/actions/video")
+    @GetMapping("/actions/video")
     public List<VideoAction> getAllVideoActions() {
         return videoActionRepository.findAll();
     }
@@ -42,7 +42,7 @@ public class ActionController {
      * @param id video action id
      * @return optional video action object
      */
-    @GetMapping("/api/actions/video/{id}")
+    @GetMapping("/actions/video/{id}")
     public Optional<VideoAction> getOneVideoActionById(@PathVariable("id") String id ) {
         return videoActionRepository.findById(Long.parseLong(id));
     }
@@ -52,7 +52,7 @@ public class ActionController {
      *
      * @return list of type actions
      */
-    @GetMapping("/api/actions/video/types")
+    @GetMapping("/actions/video/types")
     public List<VideoActionType> getAllVideoActionTypes() {
         return videoActionTypeRepository.findAll();
     }
@@ -63,7 +63,7 @@ public class ActionController {
      * @param id id of the video action type
      * @return video action type object
      */
-    @GetMapping("/api/actions/video/types/{id}")
+    @GetMapping("/actions/video/types/{id}")
     public Optional<VideoActionType> getOneVideoActionTypeById(@PathVariable String id) {
         return videoActionTypeRepository.findById(Long.parseLong(id));
     }
@@ -74,7 +74,7 @@ public class ActionController {
      * @param videoActionModel video action Model
      * @return status of http
      */
-    @RequestMapping(value = "/api/actions/video/add", method = RequestMethod.POST,
+    @RequestMapping(value = "/actions/video/add", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<VideoAction> addVideoAction(@RequestBody VideoActionModel videoActionModel) {
