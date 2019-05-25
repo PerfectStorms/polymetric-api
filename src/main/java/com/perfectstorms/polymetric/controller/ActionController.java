@@ -67,10 +67,8 @@ public class ActionController {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<VideoAction> addVideoAction(@RequestBody VideoActionModel videoActionModel) {
-        videoActionRepository.save(
-
-                new VideoAction(videoActionModel.getUsername(), videoActionModel.getType(), videoActionModel.getTime())
-        );
+        videoActionRepository.save(new VideoAction(videoActionModel.getUsername(), videoActionModel.getType(),
+                videoActionModel.getTime()));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
