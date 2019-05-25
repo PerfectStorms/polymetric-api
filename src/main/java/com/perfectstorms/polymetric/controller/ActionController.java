@@ -29,7 +29,7 @@ public class ActionController {
     /**
      * Get all video actions
      *
-     * @return List of VideoAction objects
+     * @return list of VideoAction objects
      */
     @GetMapping("/api/actions/video")
     public List<VideoAction> getAllVideoActions() {
@@ -37,16 +37,21 @@ public class ActionController {
     }
 
     /**
-     * Get one VideoAction object
+     * Get one video action by id
      *
-     * @param id VideoAction object id
-     * @return optional VideoAction object
+     * @param id video action id
+     * @return optional video action object
      */
     @GetMapping("/api/actions/video/{id}")
     public Optional<VideoAction> getOneVideoAction(@PathVariable("id") String id ) {
         return videoActionRepository.findById(Long.parseLong(id));
     }
 
+    /**
+     * Get all action types
+     *
+     * @return list of type actions
+     */
     @GetMapping("/api/actions/video/types")
     public List<VideoActionType> getAllVideoActionTypes() {
         return videoActionTypeRepository.findAll();
@@ -55,8 +60,8 @@ public class ActionController {
     /**
      * Add video action
      *
-     * @param videoActionModel VideoAction Model
-     * @return ResponseEntity
+     * @param videoActionModel video action Model
+     * @return status of http
      */
     @RequestMapping(value = "/api/actions/video/add", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)
