@@ -12,9 +12,17 @@ public class VideoAction {
 
     @JsonProperty(value = "type_id")
     private long typeId;
-
     private Time time;
     private Date date;
+
+    @JsonProperty(value = "video_id")
+    private long videoId;
+
+    @JsonProperty(value = "video_position")
+    private Time videoPosition;
+
+    @JsonProperty(value = "re_position")
+    private Time rePosition;
 
     public VideoAction(long id, String username, long typeId, Time time, Date date) {
         this.id = id;
@@ -64,6 +72,30 @@ public class VideoAction {
         this.date = date;
     }
 
+    public long getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(long videoId) {
+        this.videoId = videoId;
+    }
+
+    public Time getVideoPosition() {
+        return videoPosition;
+    }
+
+    public void setVideoPosition(Time videoPosition) {
+        this.videoPosition = videoPosition;
+    }
+
+    public Time getRePosition() {
+        return rePosition;
+    }
+
+    public void setRePosition(Time rePosition) {
+        this.rePosition = rePosition;
+    }
+
     @Override
     public String toString() {
         return "VideoAction{" +
@@ -72,6 +104,9 @@ public class VideoAction {
                 ", typeId=" + typeId +
                 ", time=" + time +
                 ", date=" + date +
+                ", videoId=" + videoId +
+                ", videoPosition=" + videoPosition +
+                ", rePosition=" + rePosition +
                 '}';
     }
 }

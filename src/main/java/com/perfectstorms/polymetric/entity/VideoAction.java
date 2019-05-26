@@ -21,14 +21,27 @@ public class VideoAction {
 
     private Date date;
 
+    @Column(name = "video_id")
+    private long videoId;
+
+    @Column(name = "video_position")
+    private Time videoPosition;
+
+    @Column(name = "re_position")
+    private Time rePosition;
+
     public VideoAction() {
     }
 
-    public VideoAction(String username, long typeId, Time time, Date date) {
+    public VideoAction(String username, long typeId, Time time, Date date, long videoId, Time videoPosition,
+                       Time rePosition) {
         this.username = username;
         this.typeId = typeId;
         this.time = time;
         this.date = date;
+        this.videoId = videoId;
+        this.videoPosition = videoPosition;
+        this.rePosition = rePosition;
     }
 
     public long getId() {
@@ -69,5 +82,29 @@ public class VideoAction {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public long getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(long videoId) {
+        this.videoId = videoId;
+    }
+
+    public Time getVideoPosition() {
+        return videoPosition;
+    }
+
+    public void setVideoPosition(Time videoPosition) {
+        this.videoPosition = videoPosition;
+    }
+
+    public Time getRePosition() {
+        return rePosition;
+    }
+
+    public void setRePosition(Time rePosition) {
+        this.rePosition = rePosition;
     }
 }

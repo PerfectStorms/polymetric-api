@@ -77,8 +77,9 @@ public class ActionController {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity<com.perfectstorms.polymetric.entity.VideoAction> addVideoAction(@RequestBody VideoAction videoAction) {
-        videoActionRepository.save(new com.perfectstorms.polymetric.entity.VideoAction(videoAction.getUsername(), videoAction.getTypeId(),
-                videoAction.getTime(), videoAction.getDate()));
+        videoActionRepository.save(new com.perfectstorms.polymetric.entity.VideoAction(videoAction.getUsername(),
+                videoAction.getTypeId(), videoAction.getTime(), videoAction.getDate(), videoAction.getVideoId(),
+                videoAction.getVideoPosition(), videoAction.getRePosition()));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
