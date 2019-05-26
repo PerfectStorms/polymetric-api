@@ -1,47 +1,35 @@
-package com.perfectstorms.polymetric.entity;
+package com.perfectstorms.polymetric.model;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Date;
 import java.sql.Time;
 
-@Entity
-@Table(name = "video_actions")
 public class VideoAction {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private String username;
 
-    @Column(name = "type_id")
+    @JsonProperty(value = "type_id")
     private long typeId;
-
     private Time time;
-
     private Date date;
 
-    @Column(name = "video_id")
+    @JsonProperty(value = "video_id")
     private long videoId;
 
-    @Column(name = "video_position")
+    @JsonProperty(value = "video_position")
     private Time videoPosition;
 
-    @Column(name = "re_position")
+    @JsonProperty(value = "re_position")
     private Time rePosition;
 
-    public VideoAction() {
-    }
-
-    public VideoAction(String username, long typeId, Time time, Date date, long videoId, Time videoPosition,
-                       Time rePosition) {
+    public VideoAction(long id, String username, long typeId, Time time, Date date) {
+        this.id = id;
         this.username = username;
         this.typeId = typeId;
         this.time = time;
         this.date = date;
-        this.videoId = videoId;
-        this.videoPosition = videoPosition;
-        this.rePosition = rePosition;
     }
 
     public long getId() {
@@ -106,5 +94,19 @@ public class VideoAction {
 
     public void setRePosition(Time rePosition) {
         this.rePosition = rePosition;
+    }
+
+    @Override
+    public String toString() {
+        return "VideoAction{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", typeId=" + typeId +
+                ", time=" + time +
+                ", date=" + date +
+                ", videoId=" + videoId +
+                ", videoPosition=" + videoPosition +
+                ", rePosition=" + rePosition +
+                '}';
     }
 }

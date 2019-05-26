@@ -29,6 +29,11 @@ jar tvf target/polymetrica-0.0.1-dev.jar
 java -jar target/polymetrica-0.0.1-dev.jar
 ```
 
+after open your  browser: <a href="http://127.0.0.1:8080/actions/video">127.0.0.1:8080/actions/video</a>
+
+<img src="https://i.ibb.co/PgLv9ZS/video.png">
+
+
 ## API
 We provide a REST service for easy management with data from the database.
 
@@ -36,15 +41,14 @@ We provide a REST service for easy management with data from the database.
 | Type | Path | Description | Parameters |
 | --- | --- | --- | --- |
 | GET | `/actions/video/` | List all video actions | &mdash; |
-| GET | `/actions/video/{id}` | Get one video action by {id} | id |
-| POST | `/actions/video/add` | Add new video action | &mdash; |
-| DELETE | `/actions/video/{id}` | Delete the video action by {id} | id |
+| GET | `/actions/video/{id}` | Get one video action by {id} | id:long |
+| POST | `/actions/video/add` | Add new video action | username (String)<br>type_id (long)<br>time (HH:MM:SS)<br>date: (YY-MM-DD)<br>videoId (long)<br>videoPosition (HH:MM:SS)<br>rePosition (HH:MM:SS) |
 
 #### Video action types
 | Type | Path | Description | Parameters |
 | --- | --- | --- | --- |
 | GET | `/actions/video/types` | List all video action types | &mdash; |
-| GET | `/actions/video/types/{id}` | Get one video action type by {id} | id |
+| GET | `/actions/video/types/{id}` | Get one video action typeId by {id} | id:long |
 
 ## Contribute
 For any problems, comments, or feedback please create an issue [here on GitHub](https://github.com/perfectstorms/polymetric-client/issues).
