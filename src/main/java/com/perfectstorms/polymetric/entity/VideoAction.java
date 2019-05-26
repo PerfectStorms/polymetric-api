@@ -1,6 +1,7 @@
 package com.perfectstorms.polymetric.entity;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.sql.Time;
 
 @Entity
@@ -13,17 +14,21 @@ public class VideoAction {
 
     private String username;
 
-    private long type;
+    @Column(name = "type_id")
+    private long typeId;
 
     private Time time;
+
+    private Date date;
 
     public VideoAction() {
     }
 
-    public VideoAction(String username, long type, Time time) {
+    public VideoAction(String username, long typeId, Time time, Date date) {
         this.username = username;
-        this.type = type;
+        this.typeId = typeId;
         this.time = time;
+        this.date = date;
     }
 
     public long getId() {
@@ -42,12 +47,12 @@ public class VideoAction {
         this.username = username;
     }
 
-    public long getType() {
-        return type;
+    public long getTypeId() {
+        return typeId;
     }
 
-    public void setType(long type) {
-        this.type = type;
+    public void setTypeId(long typeId) {
+        this.typeId = typeId;
     }
 
     public Time getTime() {
@@ -56,5 +61,13 @@ public class VideoAction {
 
     public void setTime(Time time) {
         this.time = time;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
