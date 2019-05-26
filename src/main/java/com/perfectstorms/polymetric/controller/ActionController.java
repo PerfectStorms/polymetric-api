@@ -1,8 +1,7 @@
 package com.perfectstorms.polymetric.controller;
 
-import com.perfectstorms.polymetric.entity.VideoAction;
 import com.perfectstorms.polymetric.entity.VideoActionType;
-import com.perfectstorms.polymetric.model.VideoActionModel;
+import com.perfectstorms.polymetric.model.VideoAction;
 import com.perfectstorms.polymetric.repository.VideoActionRepository;
 import com.perfectstorms.polymetric.repository.VideoActionTypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +31,7 @@ public class ActionController {
      * @return list of VideoAction objects
      */
     @GetMapping("/actions/video")
-    public List<VideoAction> getAllVideoActions() {
+    public List<com.perfectstorms.polymetric.entity.VideoAction> getAllVideoActions() {
         return videoActionRepository.findAll();
     }
 
@@ -43,7 +42,7 @@ public class ActionController {
      * @return optional video action object
      */
     @GetMapping("/actions/video/{id}")
-    public Optional<VideoAction> getOneVideoActionById(@PathVariable("id") String id ) {
+    public Optional<com.perfectstorms.polymetric.entity.VideoAction> getOneVideoActionById(@PathVariable("id") String id ) {
         return videoActionRepository.findById(Long.parseLong(id));
     }
 
@@ -71,15 +70,15 @@ public class ActionController {
     /**
      * Add video action
      *
-     * @param videoActionModel video action Model
+     * @param videoAction video action Model
      * @return status of http
      */
     @RequestMapping(value = "/actions/video/add", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public ResponseEntity<VideoAction> addVideoAction(@RequestBody VideoActionModel videoActionModel) {
-        videoActionRepository.save(new VideoAction(videoActionModel.getUsername(), videoActionModel.getType(),
-                videoActionModel.getTime()));
+    public ResponseEntity<com.perfectstorms.polymetric.entity.VideoAction> addVideoAction(@RequestBody VideoAction videoAction) {
+        videoActionRepository.save(new com.perfectstorms.polymetric.entity.VideoAction(videoAction.getUsername(), videoAction.getTypeId(),
+                videoAction.getTime(), videoAction.getDate()));
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

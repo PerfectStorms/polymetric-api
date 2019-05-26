@@ -1,17 +1,27 @@
 package com.perfectstorms.polymetric.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.sql.Date;
 import java.sql.Time;
 
-public class VideoActionModel {
+public class VideoAction {
+
     private long id;
     private String username;
-    private long type;
-    private Time time;
 
-    public VideoActionModel(String username, long type, Time time) {
+    @JsonProperty(value = "type_id")
+    private long typeId;
+
+    private Time time;
+    private Date date;
+
+    public VideoAction(long id, String username, long typeId, Time time, Date date) {
+        this.id = id;
         this.username = username;
-        this.type = type;
+        this.typeId = typeId;
         this.time = time;
+        this.date = date;
     }
 
     public long getId() {
@@ -30,12 +40,12 @@ public class VideoActionModel {
         this.username = username;
     }
 
-    public long getType() {
-        return type;
+    public long getTypeId() {
+        return typeId;
     }
 
-    public void setType(long type) {
-        this.type = type;
+    public void setTypeId(long typeId) {
+        this.typeId = typeId;
     }
 
     public Time getTime() {
@@ -46,13 +56,22 @@ public class VideoActionModel {
         this.time = time;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
-        return "VideoActionModel{" +
+        return "VideoAction{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
-                ", type='" + type + '\'' +
+                ", typeId=" + typeId +
                 ", time=" + time +
+                ", date=" + date +
                 '}';
     }
 }
