@@ -41,15 +41,14 @@ We provide a REST service for easy management with data from the database.
 | Type | Path | Description | Parameters |
 | --- | --- | --- | --- |
 | GET | `/actions/video/` | List all video actions | &mdash; |
-| GET | `/actions/video/{id}` | Get one video action by {id} | id |
-| POST | `/actions/video/add` | Add new video action | username<br>type_id<br>time<br>date |
-| DELETE | `/actions/video` | Delete the video action by {id} | id |
+| GET | `/actions/video/{id}` | Get one video action by {id} | id:long |
+| POST | `/actions/video/add` | Add new video action | username (String)<br>type_id (long)<br>time (HH:MM:SS)<br>date: (YY-MM-DD)<br>videoId (long)<br>videoPosition (HH:MM:SS)<br>rePosition (HH:MM:SS) |
 
 #### Video action types
 | Type | Path | Description | Parameters |
 | --- | --- | --- | --- |
 | GET | `/actions/video/types` | List all video action types | &mdash; |
-| GET | `/actions/video/types/{id}` | Get one video action typeId by {id} | id |
+| GET | `/actions/video/types/{id}` | Get one video action typeId by {id} | id:long |
 
 ## Contribute
 For any problems, comments, or feedback please create an issue [here on GitHub](https://github.com/perfectstorms/polymetric-client/issues).
