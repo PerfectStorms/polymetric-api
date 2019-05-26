@@ -31,7 +31,7 @@ java -jar target/polymetrica-0.0.1-dev.jar
 
 after open your  browser: <a href="http://127.0.0.1:8080/actions/video">127.0.0.1:8080/actions/video</a>
 
-<img src="https://i.ibb.co/3cF5mXw/video-actions.png">
+<img src="https://i.ibb.co/PgLv9ZS/video.png">
 
 
 ## API
