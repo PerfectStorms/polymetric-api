@@ -1,0 +1,2 @@
+INSERT INTO public.video_actions (id, time, type_id, username, date, re_position, video_id, video_position) VALUES (1, '04:00:00', 1, 'varkrift', '2019-05-25', null, 1, '00:00:10');
+INSERT INTO public.video_actions (id, time, type_id, username, date, re_position, video_id, video_position) VALUES (2, '02:02:32', 1, 'durov', '2019-05-24', null, 2, '00:00:23');
